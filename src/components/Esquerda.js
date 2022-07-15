@@ -28,7 +28,16 @@ const posts = [
         likedBy:"adorable_animals",
         likedByImg:"assets/img/adorable_animals.svg",
         likesNumber:"99.159"
-    }
+    },
+
+    {
+        userName:"chibirdart",
+        userImg:"assets/img/chibirdart.svg",
+        postImg:"assets/img/jotaro-chibi.jpg",
+        likedBy:"meowed",
+        likedByImg:"assets/img/meowed.svg",
+        likesNumber:"111.123"
+    },
 ]
 
 export default function Esquerda(){
