@@ -40,17 +40,17 @@ function Sugestoes(){
                 </div>
 
                 {suggestions.map(user => 
-                <div class="sugestao">
-                    <div class="usuario">
-                        <img src={user.img} />
-                        <div class="texto">
-                            <div class="nome">{user.name}</div>
-                            <div class="razao">{user.reason}</div>
+                    <div class="sugestao">
+                        <div class="usuario">
+                            <img src={user.img} />
+                            <div class="texto">
+                                <div class="nome">{user.name}</div>
+                                <div class="razao">{user.reason}</div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="seguir">Seguir</div>
-                </div>
+                        <div class="seguir">Seguir</div>
+                    </div>
                 )}
 
             </div>
