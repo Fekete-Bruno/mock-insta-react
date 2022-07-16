@@ -1,13 +1,11 @@
-import IonIcon from "./IonIcon"
-
 export default function FundoMobile(){
     return(
         <div class="fundo-mobile">
-            <IonIcon name="home" />
-            <IonIcon name="search-outline" />
-            <IonIcon name="add-circle-outline" />
-            <IonIcon name="heart-outline" />
-            <IonIcon name="person-outline" />
+            <ion-icon name="home"></ion-icon>
+            <ion-icon name="search-outline"></ion-icon>
+            <ion-icon name="add-circle-outline"></ion-icon>
+            <ion-icon name="heart-outline"></ion-icon>
+            <ion-icon name="person-outline"></ion-icon>
         </div>
     );
 }
