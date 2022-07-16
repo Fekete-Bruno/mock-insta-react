@@ -6,12 +6,12 @@ export default function Post(props){
     let firstIcon = (like==="hidden") ? "" : "hidden";
     
     function likePost(){
-        if(like === "red"){
-            setLike("hidden");
-            firstIcon = "";
+        if(like === "hidden"){
+            setLike("red");
+            firstIcon = "hidden";
         }else{
-             setLike("red");
-             firstIcon = "hidden";
+             setLike("hidden");
+             firstIcon = "";
         }
     }
 
