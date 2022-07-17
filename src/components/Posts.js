@@ -1,4 +1,5 @@
 import Post from "./Post"
+import VideoPost from "./VideoPost"
 
 export default function Posts(){
 
@@ -31,6 +32,25 @@ export default function Posts(){
         },
     ]
 
+    const videoPosts = [
+        {
+            userName:"adorable_animals",
+            userImg:"assets/img/adorable_animals.svg",
+            likedBy:"respondeai",
+            postVideo:"./assets/video/video",
+            likedByImg:"assets/img/respondeai.svg", 
+            likesNumber:"65.021",
+        },
+        {
+            userName:"respondeai",
+            userImg:"assets/img/respondeai.svg",
+            likedBy:"memeriagourmet",
+            postVideo:"./assets/video/video",
+            likedByImg:"assets/img/memeriagourmet.svg", 
+            likesNumber:"37.002",
+        },
+    ]
+
     return(
         <div class="posts">
 
@@ -44,7 +64,19 @@ export default function Posts(){
                 likesNumber={post.likesNumber}
                 />
             )}
-            
+
+            {videoPosts.map(post =>
+                <VideoPost 
+                userName={post.userName}
+                userImg={post.userImg}
+                postVideo={post.postVideo}
+                likedBy={post.likedBy}
+                likedByImg={post.likedByImg} 
+                likesNumber={post.likesNumber}
+                />    
+            )}
         </div>
+
+        
     )
 }
