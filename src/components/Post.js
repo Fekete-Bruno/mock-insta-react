@@ -15,6 +15,18 @@ export default function Post(props){
         }
     }
 
+    let content;
+    if(props.type==="image"){
+        content = <img src={props.postImg} />
+    } else if(props.type==="video"){
+        content = 
+                <video autoPlay muted loop>
+                    <source src={props.postVideo + ".mp4"} type="video/mp4" />
+                    <source src={props.postVideo + ".ogg"} type="video/ogg" />
+                    Your browser does not support the video tag.
+                </video>;
+    }
+
     return(
         <div class="post">
             <div class="topo">
@@ -28,7 +40,7 @@ export default function Post(props){
             </div>
 
             <div class="conteudo" onClick={()=>setLike("red")}>
-                <img src={props.postImg} />
+                {content}
             </div>
 
             <div class="fundo">
