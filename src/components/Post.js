@@ -6,6 +6,8 @@ export default function Post(props){
 
     const [like, setLike] = React.useState("hidden");
     let firstIcon = (like==="hidden") ? "" : "hidden";
+    const mainIconClass = " md hydrated"
+    let content;
     
     function likePost(){
         if(like === "hidden"){
@@ -17,7 +19,6 @@ export default function Post(props){
         }
     }
 
-    let content;
     if(props.type==="image"){
         content = <img src={props.postImg} />
     } else if(props.type==="video"){
@@ -40,8 +41,8 @@ export default function Post(props){
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon class={firstIcon + " md hydrated"} onClick={likePost} name="heart-outline"></ion-icon>
-                        <ion-icon class={like + " md hydrated"} onClick={likePost} name="heart"></ion-icon>
+                        <ion-icon class={firstIcon + mainIconClass} onClick={likePost} name="heart-outline"></ion-icon>
+                        <ion-icon class={like + mainIconClass} onClick={likePost} name="heart"></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
