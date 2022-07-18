@@ -7,7 +7,6 @@ export default function Post(props){
     const [like, setLike] = React.useState("hidden");
     let firstIcon = (like==="hidden") ? "" : "hidden";
     const mainIconClass = " md hydrated"
-    let content;
     
     function likePost(){
         if(like === "hidden"){
@@ -19,15 +18,18 @@ export default function Post(props){
         }
     }
 
-    if(props.type==="image"){
-        content = <img src={props.postImg} />
-    } else if(props.type==="video"){
-        content = 
-                <video autoPlay muted loop>
-                    <source src={props.postVideo + ".mp4"} type="video/mp4" />
+    function checkContentType(type){
+    if(type==="image"){
+        return(<img src={props.postImg} />);
+    } else if(type==="video"){
+        return(
+            <video autoPlay muted loop>
+                <source src={props.postVideo + ".mp4"} type="video/mp4" />
                     <source src={props.postVideo + ".ogg"} type="video/ogg" />
-                    Your browser does not support the video tag.
-                </video>;
+                Your browser does not support the video tag.
+            </video>
+        );
+        }   
     }
 
     return(
@@ -35,7 +37,7 @@ export default function Post(props){
             <Topo userName={props.userName} userImg={props.userImg}/>
 
             <div class="conteudo" onClick={()=>setLike("red")}>
-                {content}
+                {checkContentType(props.type)}
             </div>
 
             <div class="fundo">
