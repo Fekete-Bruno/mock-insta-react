@@ -1,4 +1,6 @@
-import React from "react"
+import React from "react";
+import Topo from "./Topo";
+import Curtidas from "./Curtidas";
 
 export default function Post(props){
 
@@ -29,15 +31,7 @@ export default function Post(props){
 
     return(
         <div class="post">
-            <div class="topo">
-                <div class="usuario">
-                    <img src={props.userImg} />
-                    {props.userName}
-                </div>
-                <div class="acoes">
-                    <ion-icon name="ellipsis-horizontal"></ion-icon>
-                </div>
-            </div>
+            <Topo userName={props.userName} userImg={props.userImg}/>
 
             <div class="conteudo" onClick={()=>setLike("red")}>
                 {content}
@@ -56,12 +50,7 @@ export default function Post(props){
                     </div>
                 </div>
 
-                <div class="curtidas">
-                    <img src={props.likedByImg} />
-                    <div class="texto">     
-                        Curtido por <strong>{props.likedBy}</strong> e <strong>outras {props.likesNumber} pessoas</strong>
-                    </div>
-                </div>
+                <Curtidas likedByImg={props.likedByImg} likedBy={props.likedBy} likesNumber={props.likesNumber} />
             </div>
         </div>
     )
